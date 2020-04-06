@@ -33,6 +33,7 @@ services:
   producer:
     build: ./producer
     volumes:
+      - ./.m2:/root/.m2
       - ./producer:/app
     env_file:
       - .env
@@ -44,6 +45,7 @@ services:
   consumer:
     build: ./consumer
     volumes:
+      - ./.m2:/root/.m2
       - ./consumer:/app
     env_file:
       - .env
@@ -55,6 +57,7 @@ services:
   frequency-api:
     build: ./frequency-api
     volumes:
+      - ./.m2:/root/.m2
       - ./frequency-api:/app
     env_file:
       - .env
