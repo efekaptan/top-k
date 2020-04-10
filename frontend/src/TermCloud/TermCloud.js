@@ -3,13 +3,13 @@ import WordCloud from 'wordcloud';
 
 class TermCloud extends Component {
     WIDTH = 640;
-    HEIGTH = 480;
+    HEIGHT = 480;
 
     state = {
         data: [],
         hasPropsChanged: false,
         width: this.WIDTH,
-        height: this.HEIGTH
+        height: this.HEIGHT
     };
 
     wordCloudRef = React.createRef();
@@ -33,7 +33,7 @@ class TermCloud extends Component {
 
         this.setState({
             width: isBigScreen ? this.WIDTH : innerWidth / 1.25,
-            height: isBigScreen ? this.HEIGTH : innerWidth / 2
+            height: isBigScreen ? this.HEIGHT : innerWidth / 2
         }, this.renderWordCloud);
     }
 
