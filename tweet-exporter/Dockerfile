@@ -5,5 +5,5 @@ RUN apt-get install -y maven
 
 WORKDIR /app
 
-CMD mvn clean install && java -jar target/tweet-exporter.jar
+CMD mvn clean install -DskipTests && java -jar target/tweet-exporter.jar
 

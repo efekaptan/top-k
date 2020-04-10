@@ -5,5 +5,5 @@ RUN apt-get install -y maven
 
 WORKDIR /app
 
-CMD mvn spring-boot:run
+CMD mvn spring-boot:run -DskipTests
 
