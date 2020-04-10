@@ -18,7 +18,7 @@ public class FrequencyController {
 
     @GetMapping("/terms")
     public List<String> terms(@RequestParam(value = "count", defaultValue = "100") int count) {
-        return frequencyCounter.gettopkTerms(count);
+        return frequencyCounter.getTopTerms(count);
     }
 
     @GetMapping("/terms/count")
@@ -28,6 +28,6 @@ public class FrequencyController {
 
     @GetMapping("/pairs")
     public List<Pair> pairs(@RequestParam(value = "count", defaultValue = "100") int count) {
-        return frequencyCounter.gettopkPairs(count);
+        return frequencyCounter.getTopPairs(count);
     }
 }

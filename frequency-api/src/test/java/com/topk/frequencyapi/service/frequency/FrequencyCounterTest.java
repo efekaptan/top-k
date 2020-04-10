@@ -29,14 +29,14 @@ public class FrequencyCounterTest {
     public void shouldIncrement() {
         counter.insert("test2");
         counter.insert("test1");
-        assertEquals(Collections.singletonList("test1"), counter.gettopkTerms(1));
+        assertEquals(Collections.singletonList("test1"), counter.getTopTerms(1));
 
         counter.insert("test1");
-        assertEquals(Arrays.asList("test1", "test2"), counter.gettopkTerms(2));
+        assertEquals(Arrays.asList("test1", "test2"), counter.getTopTerms(2));
 
         counter.insert("test3");
         counter.insert("test3");
-        assertEquals(Arrays.asList("test3", "test1"), counter.gettopkTerms(2));
+        assertEquals(Arrays.asList("test3", "test1"), counter.getTopTerms(2));
     }
 
     @Test
@@ -44,10 +44,10 @@ public class FrequencyCounterTest {
         counter.insert("test1");
         counter.insert("test2");
         counter.remove("test2");
-        assertEquals(Collections.singletonList("test1"), counter.gettopkTerms(1));
+        assertEquals(Collections.singletonList("test1"), counter.getTopTerms(1));
 
         counter.remove("test1");
-        assertEquals(Collections.emptyList(), counter.gettopkTerms(1));
+        assertEquals(Collections.emptyList(), counter.getTopTerms(1));
     }
 
     @Test
@@ -55,33 +55,33 @@ public class FrequencyCounterTest {
         counter.insert("test1");
         counter.insert("test2");
         counter.insert("test2");
-        assertEquals(Arrays.asList("test2", "test1"), counter.gettopkTerms(2));
-        assertEquals(Collections.singletonList("test2"), counter.gettopkTerms(1));
+        assertEquals(Arrays.asList("test2", "test1"), counter.getTopTerms(2));
+        assertEquals(Collections.singletonList("test2"), counter.getTopTerms(1));
 
         counter.insert("test3");
         counter.insert("test3");
-        assertEquals(Collections.singletonList("test3"), counter.gettopkTerms(1));
+        assertEquals(Collections.singletonList("test3"), counter.getTopTerms(1));
 
         counter.insert("test3");
-        assertEquals(Arrays.asList("test3", "test2"), counter.gettopkTerms(2));
+        assertEquals(Arrays.asList("test3", "test2"), counter.getTopTerms(2));
 
         counter.remove("test3");
-        assertEquals(Arrays.asList("test3", "test2"), counter.gettopkTerms(2));
+        assertEquals(Arrays.asList("test3", "test2"), counter.getTopTerms(2));
 
         counter.remove("test3");
-        assertEquals(Arrays.asList("test2", "test3"), counter.gettopkTerms(2));
+        assertEquals(Arrays.asList("test2", "test3"), counter.getTopTerms(2));
 
         counter.remove("test3");
-        assertEquals(Arrays.asList("test2", "test1"), counter.gettopkTerms(2));
+        assertEquals(Arrays.asList("test2", "test1"), counter.getTopTerms(2));
 
         counter.remove("test2");
-        assertEquals(Arrays.asList("test2", "test1"), counter.gettopkTerms(2));
+        assertEquals(Arrays.asList("test2", "test1"), counter.getTopTerms(2));
 
         counter.remove("test1");
-        assertEquals(Collections.singletonList("test2"), counter.gettopkTerms(2));
+        assertEquals(Collections.singletonList("test2"), counter.getTopTerms(2));
 
         counter.remove("test2");
-        assertEquals(Collections.emptyList(), counter.gettopkTerms(2));
+        assertEquals(Collections.emptyList(), counter.getTopTerms(2));
         assertEquals(0, counter.getTermCount());
     }
 }

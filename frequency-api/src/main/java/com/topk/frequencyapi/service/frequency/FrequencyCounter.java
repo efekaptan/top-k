@@ -11,9 +11,9 @@ public interface FrequencyCounter {
 
     void remove(String word);
 
-    List<Pair> gettopkPairs(int count);
+    List<Pair> getTopPairs(int count);
 
-    List<String> gettopkTerms(int count);
+    List<String> getTopTerms(int count);
 
     int getTermCount();
 }

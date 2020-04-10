@@ -5,5 +5,5 @@ RUN apt-get install -y maven
 
 WORKDIR /app
 
-CMD mvn spring-boot:run
+CMD mvn clean install && java -jar target/tweet-exporter.jar
 

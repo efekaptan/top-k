@@ -9,7 +9,7 @@ export default function () {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#link">Article</Nav.Link>
+                        <Nav.Link href="https://medium.com/@efekaptan/top-k-frequent-items-in-a-time-sliding-window" target="_blank">Article</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,5 +1,4 @@
 .idea
+.env
 target
 *.iml
-.m2
-.env

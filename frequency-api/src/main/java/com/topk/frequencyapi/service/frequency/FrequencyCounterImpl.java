@@ -36,7 +36,7 @@ public class FrequencyCounterImpl implements FrequencyCounter {
         }
     }
 
-    public List<Pair> gettopkPairs(int count) {
+    public List<Pair> getTopPairs(int count) {
         List<Pair> result = new ArrayList<>();
         CountNode current = biggest;
         while (count > 0 && current != null) {
@@ -51,8 +51,8 @@ public class FrequencyCounterImpl implements FrequencyCounter {
         return result;
     }
 
-    public List<String> gettopkTerms(int count) {
-        List<Pair> pairs = gettopkPairs(count);
+    public List<String> getTopTerms(int count) {
+        List<Pair> pairs = getTopPairs(count);
         return pairs.stream().map(c -> c.getTerm()).collect(Collectors.toList());
     }
 
